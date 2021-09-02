@@ -18,25 +18,30 @@ height = (ROW_COUNT+1) * SQUARESIZE
 size = (width, height)
 screen = pygame.display.set_mode(size)
 
-
+#creates game board matrix
 def createBoard():
 	board = np.zeros((ROW_COUNT,COLUMN_COUNT))
 	return board
 
+#changes value of required slot
 def dropPiece(board, row, col, piece):
 	board[row][col] = piece
 
+#checks if column is full
 def isValid(board, col):
 	return board[ROW_COUNT-1][col] == 0
 
+#checks if row is open
 def getOpenRow(board, col):
 	for r in range(ROW_COUNT):
 		if board[r][col] == 0:
 			return r
 
+#prints board to screen
 def printBoard(board):
 	print(np.flip(board, 0))
 
+#checks if player's piece are connect in a row of 4
 def winCon(board, player):
     horizontal_kernel = np.array([[ 1, 1, 1, 1]])
     vertical_kernel = np.transpose(horizontal_kernel)
@@ -49,6 +54,7 @@ def winCon(board, player):
             return True
     return False
 
+#creates a GUI for drawing the board
 def drawBoard(board):
 	for c in range(COLUMN_COUNT):
 		for r in range(ROW_COUNT):
@@ -90,7 +96,7 @@ def main():
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 pygame.draw.rect(screen, BLACK, (0,0, width, SQUARESIZE))
-                # Ask for Player 1 Input
+                #Player 1 Input
                 if turn == 0:
                     posx = event.pos[0]
                     col = int(math.floor(posx/SQUARESIZE))
@@ -104,7 +110,7 @@ def main():
                             screen.blit(label, (40,10))
                             gameOver = True
 
-                # # Ask for Player 2 Input
+                #Player 2 Input
                 else:				
                     posx = event.pos[0]
                     col = int(math.floor(posx/SQUARESIZE))
@@ -125,7 +131,7 @@ def main():
                 turn = turn % 2
 
                 if gameOver:
-                    pygame.time.wait(3000)
+                    pygame.time.wait(2000)
 
 if __name__ == '__main__':
     main()
