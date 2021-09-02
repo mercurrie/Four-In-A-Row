@@ -6,3 +6,6 @@ A Connect Four style game built with Python
     math
     numpy
     scipy
+ 
+ #Technologies
+ Python
