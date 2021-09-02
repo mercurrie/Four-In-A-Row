@@ -1,4 +1,5 @@
 import numpy as np
+from numpy.core.fromnumeric import size
 import pygame
 
 ROW_COUNT = 6
@@ -60,6 +61,15 @@ turn = 0
 
 pygame.init()
 
+SQUARESIZE = 100
+
+width = COL_COUNT * SQUARESIZE
+height = (ROW_COUNT+1) * SQUARESIZE
+
+size = (width, height)
+
+screen = pygame.display.set_mode(size)
+
 
 while not game_over:
     #Ask for player 1 input
@@ -86,6 +96,6 @@ while not game_over:
                 print("PLAYER 2 WINS")
                 game_over = True
 
-    printBoard()
+    printBoard(board)
     turn +=1
     turn = turn % 2
