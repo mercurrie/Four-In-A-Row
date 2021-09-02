@@ -3,7 +3,6 @@
 > Mason Currie
 # Description
 > A Connect Four style game built with Python
-> 
 # Libraries used:
 > pygame
 > sys
