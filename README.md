@@ -1,11 +1,15 @@
 # Four-In-A-Row
-A Connect Four style game built with Python
+#Creator
+> Mason Currie
+# Description
+> A Connect Four style game built with Python
+> 
 # Libraries used:
-    pygame
-    sys
-    math
-    numpy
-    scipy
+> pygame
+> sys
+> math
+> numpy
+> scipy
  
- #Technologies
- Python
+ # Technologies
+ > Python
