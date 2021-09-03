@@ -6,7 +6,7 @@
 # Libraries used
 >> pygame
  sys
- >>math
+ math
  numpy
  scipy
  
