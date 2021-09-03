@@ -4,8 +4,8 @@
 # Description
 > A Connect Four style game built with Python
 # Libraries used:
- *pygame
- sys
+ -pygame
+ -sys
  math
  numpy
  scipy
